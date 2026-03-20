@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "build:task-folder": "node scripts/build-task-folder.mjs build-task-folder",
     "lint": "eslint src/**/*.js",
     "lint:fix:js": "eslint src/**/*.js --fix",
     "lint:fix:styles": "stylelint \"src/**/*.scss\" --fix",
