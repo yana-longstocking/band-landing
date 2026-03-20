@@ -1,6 +1,8 @@
-## Landing starter (Vite + SCSS + JS)
+## Band Concert Landing (Vite + SCSS + JS)
 
-This is a minimal landing page starter built with [Vite](https://vite.dev/), vanilla JavaScript, and SCSS (compiled with `sass`).
+[Preivew link](https://yana-longstocking.github.io/band-landing/)
+
+This is a minimal landing page starter built with Vite, vanilla JavaScript, and SCSS (compiled with `sass`).
 
 ### Scripts
 
@@ -16,4 +18,3 @@ This is a minimal landing page starter built with [Vite](https://vite.dev/), van
 - `src/style.css` – main style sheet (written with SCSS‑style nesting, compiled by `sass`)
 
 Start editing `src/main.js` and `src/style.css` to customize the content and design of your landing page.
-
