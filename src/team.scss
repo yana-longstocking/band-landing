@@ -1,0 +1,67 @@
+@use './mixins' as *;
+@use './vars' as *;
+
+.team {
+    margin-bottom: 80px;
+ 
+
+  &__title {
+    font-family: Oswald, sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+    padding-bottom: 40px;
+    text-align: center;
+
+    @include on-tablet {
+      font-size: 27px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @include on-tablet {
+    flex-direction: row;
+   justify-content: space-between;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border: 1px solid var(--bg-table-row);
+    background: var(--bg-table-row-soft);
+    border-radius: 12px;
+    overflow: hidden;
+
+    &:hover { 
+      opacity: 0.5; 
+      transform: translateY(-2px); 
+      transition: opacity var(--transform-duration), transform var(--transform-duration);
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    @include on-tablet {
+    width: 215px;
+      height: 100%;  
+    }
+  }
+
+  &__label {
+    font-family: Oswald, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text);
+    padding-left: 10px;
+    padding-bottom: 15px;
+  }
+}

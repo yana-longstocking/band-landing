@@ -1,2 +1,12 @@
-@use './style.css';
-
+@use './vars' as *;
+@use './mixins' as *;
+@use './fonts' as *;
+@use './style' as *;
+@use './header' as *;
+@use './about-us' as *;
+@use './concerts' as *;
+@use './team' as *;
+@use './our-history' as *;
+@use './contacts' as *;
+@use './footer' as *;
+@use './popup' as *;

@@ -1,0 +1,61 @@
+@use './mixins' as *;
+@use './vars' as *;
+
+.popup {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: none;
+
+  &--open {
+    display: block;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgb(0 0 0 / 62%);
+  }
+
+  &__content {
+    position: relative;
+    margin: 20vh auto 0;
+    max-width: 290px;
+    background: var(--bg-table);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 18px 18px;
+    color: var(--text);
+    box-sizing: border-box;
+
+    @include on-tablet {
+      max-width: 350px;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    border: 0;
+    background: transparent;
+    color: var(--text);
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  &__title {
+    margin: 0 0 10px;
+    font-family: Oswald, sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+  &__text {
+    margin: 0;
+    font-family: Oswald, sans-serif;
+    font-size: 14px;
+    line-height: 22px;
+  }
+}

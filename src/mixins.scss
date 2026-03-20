@@ -1,0 +1,90 @@
+@use './vars' as *;
+
+@mixin hover($_property, $_toValue) {
+    transition: #{$_property} 0.3s;
+  
+    &:hover {
+      #{$_property}: $_toValue;
+    }
+  }
+  
+  @mixin on-mobile {
+    @media (min-width: $mobile-min-width) {
+      @content;
+    }
+  }
+  
+  @mixin on-tablet {
+    @media (min-width: $tablet-min-width) {
+      @content;
+    }
+  }
+  
+  @mixin on-desktop {
+    @media (min-width: $desktop-min-width) {
+      @content;
+    }
+  }
+  
+  @mixin on-the-design {
+    @media (min-width: $the-design) {
+      @content;
+    }
+  }
+  
+  @mixin content-padding-inline() {
+    padding-inline: 30px;
+  
+    @include on-tablet {
+      padding-inline: 34px;
+
+    }
+
+    @include on-desktop {
+      margin-inline: auto;
+      padding-inline: 240px;
+      
+    }
+
+    @include on-the-design {
+      padding-inline: 300px;
+    }
+  }
+  
+  .container {
+    @include content-padding-inline;
+  }
+
+  .container-gradient {
+    @include content-padding-inline;
+
+    background: linear-gradient(50deg, var(--bg-contacts), var(--bg-gradient));
+    padding-block: 28px 34px;
+  }
+
+  .container-gradient-contacts{
+    @include content-padding-inline;
+
+    background: linear-gradient(50deg, var(--bg-gradient), var(--bg-contacts));
+    padding-block: 28px 34px;
+  }
+
+  @mixin page-grid {
+    --columns: 4;
+  
+    display: grid;
+    column-gap: 20px;
+    grid-template-columns: repeat(var(--columns), 1fr);
+  
+    @include on-tablet {
+      --columns: 8;
+    }
+  
+    @include on-desktop {
+      --columns: 12;
+  
+      column-gap: 30px;
+    }
+  }
+  
+  

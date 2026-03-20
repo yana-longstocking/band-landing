@@ -1,0 +1,140 @@
+@use './vars' as *;
+
+.concerts { 
+  margin-bottom: 80px;
+
+
+  &__card {
+    color: var(--text);
+    background: var(--bg-soft);
+    border: 1px solid var(--border-table-row);
+    border-radius: 12px;
+    overflow: hidden;
+    width: 100%;
+
+    @media (max-width: #{$tablet-min-width - 1px}) {
+      overflow-x: hidden;
+    }
+  }
+
+  &__title {
+    padding: 15px 20px 20px;
+    font-family: Oswald, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+    border-bottom: 1px solid var(--bg-table-row-soft); 
+    background: var(--bg-table-row);
+  }
+
+  &__table {  
+    width: 100%;
+    border-collapse: collapse; 
+  }
+
+  &__header {
+    text-align: left; 
+    font-size: 12px; 
+    color: var(--text);
+    letter-spacing: 1px;
+    padding: 15px 20px 20px;
+    border-bottom: 1px solid var(--border-table-row);
+    background: var(--bg-table-row);
+  }
+
+  &__row {
+    border-bottom: 1px solid var(--bg-table-row); 
+    background: var(--bg-table-row-soft);
+    
+  }
+
+  &__row:last-child { 
+    border-bottom: none; 
+  }
+
+  &__cell { 
+    padding: 15px 20px 20px;
+    font-size: 13px; 
+    vertical-align: middle; 
+    color: var(--text);
+  }
+
+  @media (max-width: #{$tablet-min-width - 1px}) {
+    &__table,
+    &__table thead,
+    &__table tbody,
+    &__table tr,
+    &__table th,
+    &__table td {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    &__table thead {
+      display: none;
+    }
+
+    &__row {
+      border-bottom: 1px solid var(--bg-table-row-soft);
+      padding: 10px 0;
+    }
+
+    &__row:nth-child(odd) {
+      background: var(--bg-table-row-soft);
+    }
+
+    &__row:nth-child(even) {
+      background: var(--bg-table-row);
+    }
+
+    &__cell {
+      padding: 8px 14px;
+      border: 0;
+      white-space: normal;
+      word-break: word-break;
+    }
+
+    &__cell:nth-child(1)::before {
+      content: 'Місто / Заклад';
+      display: block;
+      font-size: 12px;
+      margin-bottom: 4px;
+    }
+
+    &__cell:nth-child(2)::before {
+      content: 'К-сть місць';
+      display: block;
+      font-size: 12px;
+      margin-bottom: 4px;
+    }
+
+    &__cell:nth-child(3)::before {
+      content: 'Дата і час';
+      display: block;
+      font-size: 12px;
+      margin-bottom: 4px;
+    }
+  }
+
+  &__button {
+    padding: 8px 20px;
+    background: var(--background-button);
+    color: var(--text);
+    font-family: Oswald, sans-serif;
+    font-size: 13px; 
+    font-weight: 700;
+    border: none; 
+    cursor: pointer; 
+    border-radius: 4px;
+    transition: background var(--transform-duration), transform 0.15s;
+    text-decoration: none; 
+    display: inline-block;
+  }
+
+  &__button:hover { 
+    background: var(--background-button);
+    opacity: 0.8; 
+    transform: translateY(-1px); 
+  }
+}
